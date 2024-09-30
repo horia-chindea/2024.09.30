@@ -82,3 +82,65 @@ console.log("obs3 === obj1: ", obj3===obj1);
 
 // obj1 = {b : 3};
 // console.log("obs3 === obj1: ", obj3===obj1);    // ???
+
+// JS Date
+let now = new Date;
+console.log("Data: ", now);
+
+let yesterday = new Date("2024-09-29");
+console.log("Yesterday: ", yesterday);
+
+// Date methods:
+// accesarea proprietatilor unui obiect Date
+console.log("now.getDate():", now.getDate());    // returneaza ziua din luna de pe obiectul now
+console.log("now.getDay():", now.getDay());    // returneaza ziua din saptamana de pe obiectul now (duminica = 0)
+console.log("now.getFullYear():", now.getFullYear());    // returneaza anul de pe obiectul now
+console.log("now.getMonth():", now.getMonth());    // returneaza indexul lunii de pe obiectul now (0 - 11)
+console.log("now.getHours():", now.getHours());    // returneaza ora de pe obiectul now
+console.log("now.getMinutes():", now.getMinutes());    // returneaza minutul de pe obiectul now
+console.log("now.getSeconds():", now.getSeconds());    // returneaza secunda de pe obiectul now
+console.log("now.getMilliseconds():", now.getMilliseconds());    // returneaza milisecundele de pe obiectul now
+
+// setarea proprietatilor unui obiect Date:
+yesterday.setFullYear(2023);
+console.log("yesterday: ", yesterday);
+yesterday.setMonth(6);
+console.log("yesterday: ", yesterday);
+yesterday.setDate(21);
+console.log("yesterday: ", yesterday);
+yesterday.setHours(15);
+console.log("yesterday: ", yesterday);
+yesterday.setMinutes(36);
+console.log("yesterday: ", yesterday);
+yesterday.setSeconds(48);
+console.log("yesterday: ", yesterday);
+
+// adaugare de zile:
+yesterday.setDate(yesterday.getDate()+2);
+console.log("yesterday: ", yesterday);
+
+// diferenta dintre doua date in milisecunde:
+const difference = now - yesterday;
+console.log("difference:", difference);
+
+// formatarea unei date:
+const year = now.getFullYear();
+const month = now.getMonth();
+const day = now.getDate();
+const weekday = now.getDay();
+const hour = now.getHours();
+const minutes = now.getMinutes();
+
+const months = ["Ianuarie","Februarie","Martie","Aprilie","Mai","Iunie","Iulie","August",
+    "Septembrie","Octombrie","Noiembrie","Decembrie"];
+const weekDays = ["Duminica","Luni","Marti","Miercuri","Joi","Vineri","Sambata"];
+
+let formatedDate = `${year}, ${months[month]}, ${day}, ${weekDays[weekday]}, ora ${hour}:${minutes}`;
+console.log(formatedDate);
+
+// timestamp:
+const newDate = new Date();
+const timestamp = newDate.getTime();
+console.log("newDate: ", newDate);
+const fromTimestamp = new Date(timestamp - 5000000);
+console.log("fromTimestamp: ",fromTimestamp);
